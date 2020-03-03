@@ -6,14 +6,13 @@ let speed = 20;
 
 function setup() {
   createCanvas(600, 600);
-  saveCanvas('ehoyt2canvas', 'jpg');
   background(255);
   noStroke();
 }
 
 function draw() {
-  from = color(mouseX+50, mouseY+50, 216, 0.01*255);
-  to = color(42, mouseX+50, mouseY+50, 0.01 * 255);
+  from = color(mouseX+50, mouseY+50, 220, 0.05*255);
+  to = color(75, mouseX+50, mouseY+50, 0.05 * 255);
 
 
   //from = color(83, 190, 216, 0.01*255);
@@ -119,23 +118,21 @@ frameRate(10);
 
 
 
-    fill(255,255, 255,10+10);
-    ellipse(random(0,600), random(0,600), random(50,150), random(50,150));
-    ellipse(random(0,600), random(0,600), random(50,150), random(50,150));
+    fill(255,255, 255,10);
+    ellipse(random(0,600), random(0,600), mouseX, mouseY);
+    ellipse(random(0,600), random(0,600), mouseX, mouseY);
+    ellipse(random(0,600), random(0,600), mouseX, mouseY);
+
 }
 
 
 
-//if (mouseIsPressed) {
-//  fill(255);
-//  rectMode(CENTER);
-// rect(mouseX,mouseY,1200,1200);
-//}
-
 
 
 if (mouseIsPressed) {
-  fill(random(0,255), random(0,255), random(0,255), 0.5*255);
+  fill(mouseX, -mouseY, mouseY, 0.05*255);
+  ellipse (random(25,550), random(25,550), random(150,200), random(150,200));
+  ellipse (random(25,550), random(25,550), random(150,200), random(150,200));
   ellipse (random(25,550), random(25,550), random(150,200), random(150,200));
 
 }
@@ -143,15 +140,10 @@ if (mouseIsPressed) {
 
   }
 
-function keyPressed() {
-  if (keyCode === ENTER) {
-    fill(255);
-    rect(0,0,600,600);
-  }
-}
+
 
 function keyTyped() {
   if (key === 's') {
-    saveCanvas('ehoyt2Canvas');
+    saveCanvas('ehoyt2Canvas','png');
   }
 }
